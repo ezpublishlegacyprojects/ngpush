@@ -25,4 +25,12 @@ $Result['content'] = $tpl->fetch( "design:push/push_node.tpl" );
 $Result['path'] = array( array( 'url' => '/push/node/'. $nodeID,
                                 'text' => 'Push Node' )
                   );
+
+$contentInfoArray = array();
+$contentInfoArray['persistent_variable'] = false;
+if ( $tpl->variable( 'persistent_variable' ) !== false )
+	$contentInfoArray['persistent_variable'] = $tpl->variable( 'persistent_variable' );
+
+$Result['content_info'] = $contentInfoArray;
+
 ?>
