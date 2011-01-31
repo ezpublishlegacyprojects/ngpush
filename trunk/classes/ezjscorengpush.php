@@ -10,9 +10,9 @@ class ezjscoreNGPush extends ezjscServerFunctions
 		$user = eZUser::currentUser();
 		if ( $user instanceof eZUser ) {
 			$result = $user->hasAccessTo('push');
-			if ($result['accessWord'] == 'yes') return true;
+			if ($result['accessWord'] == 'no') return false;
 		}
-		return false;
+		return true;
 	}
 
 	public static function push( $args )
